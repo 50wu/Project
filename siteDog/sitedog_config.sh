@@ -25,7 +25,7 @@ sed -i -e 's/;date.timezone =/date.timezone = Asiai\/Beijing/g' /etc/php5/apache
 service apache2 restart >/dev/null 2>&1
 #Config zabbix-agent service
 sed -i -e 's/Server[ ]*=[ ]*[^ ]*/Server=127.0.0.1/g' /etc/zabbix/zabbix_agentd.conf
-sed -i -e 's/# Hostname=/Hostname=Server2/g' /etc/zabbix/zabbix_agentd.conif
+sed -i -e 's/# Hostname=/Hostname=Server2/g' /etc/zabbix/zabbix_agentd.conf
 service zabbix-agent restart >/dev/null 2>&1
 #Install Grafana
 cd /tmp
