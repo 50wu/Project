@@ -8,8 +8,8 @@ apt-get update >>sitedog.log 2>&1
 apt-get install -y zabbix-server-pgsql zabbix-frontend-php zabbix-agent php5-pgsql >>sitedog.log 2>&1
 
 #Config PostgreSQL
-sed -i -e 's/local   all             all                                     peer/local   all             all                                     trust/g' /etc/postgresql/11/main/pg_hba.conf
-sed -i -e 's/host    all             all             127.0.0.1\/32            md5/host    all             all             0.0.0.0\/0            trust/g' /etc/postgresql/11/main/pg_hba.conf
+sed -i -e 's/local   all             all                                     peer/local   all             all                                     trust/g' /etc/postgresql/9.3/main/pg_hba.conf
+sed -i -e 's/host    all             all             127.0.0.1\/32            md5/host    all             all             0.0.0.0\/0            trust/g' /etc/postgresql/9.3/main/pg_hba.conf
 sudo -u postgres createuser zabbix >/dev/null 2>&1
 sudo -u postgres createdb -O zabbix zabbix >/dev/null 2>&1
 service postgresql restart >/dev/null 2>&1
