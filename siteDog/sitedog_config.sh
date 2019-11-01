@@ -12,7 +12,7 @@ sed -i -e 's/local   all             all                                     pee
 sed -i -e 's/host    all             all             127.0.0.1\/32            md5/host    all             all             0.0.0.0\/0            trust/g' /etc/postgresql/9.3/main/pg_hba.conf
 sudo -u postgres createuser zabbix >/dev/null 2>&1
 sudo -u postgres createdb -O zabbix zabbix >/dev/null 2>&1
-service postgresql restart >/dev/null 2>&1
+sudo service postgresql restart >/dev/null 2>&1
 
 #Install Zabbix
 #Config zabbix-server service
@@ -37,5 +37,5 @@ sudo service grafana-server start >/dev/null 2>&1
 #Restart all services
 service zabbix-server restart >/dev/null 2>&1
 service zabbix-agent restart >/dev/null 2>&1
-service postgresql restart >/dev/null 2>&1
-service apache2 restart >/dev/null 2>&1
+sudo service postgresql restart >/dev/null 2>&1
+sudo service apache2 restart >/dev/null 2>&1
