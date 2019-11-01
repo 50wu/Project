@@ -21,7 +21,7 @@ sed -i -e 's/# DBHost=localhost/DBHost=localhost/g' /etc/zabbix/zabbix_server.co
 sed -i -e 's/# DBPassword=/DBPassword=zabbix/g' /etc/zabbix/zabbix_server.conf
 service zabbix-server restart >/dev/null 2>&1
 #Config zabbix-web service
-sed -i -e 's/;date.timezone =/date.timezone = Asiai\/Shanghai/g' /etc/php5/apache2/php.ini
+sed -i -e 's/;date.timezone =/date.timezone = Asia\/Shanghai/g' /etc/php5/apache2/php.ini
 service apache2 restart >/dev/null 2>&1
 #Config zabbix-agent service
 sed -i -e 's/Server[ ]*=[ ]*[^ ]*/Server=127.0.0.1/g' /etc/zabbix/zabbix_agentd.conf
