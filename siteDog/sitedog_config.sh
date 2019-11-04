@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Please note this script needs to be run as root.
+
 #Install package
 cd /tmp
 wget https://repo.zabbix.com/zabbix/4.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.0-1%2Btrusty_all.deb >/dev/null 2>&1
